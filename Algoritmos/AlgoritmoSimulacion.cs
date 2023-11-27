@@ -22,7 +22,7 @@ namespace Prueba16Nov.Algoritmos
             return listaSalida;
         }
     
-    public List<int> GenerarValoresPseudoaleatoriosNoCongruencial(int n)
+    public Tuple<List<int>, List<int>, List<int>, List<int>, List<int>, List<int>> GenerarValoresPseudoaleatoriosNoCongruencial(int n)
     {
         // Creacion de algoritmo para generar valores pseudoaleatorios con el Metodo del producto medio
         Random rnd = new Random();
@@ -33,13 +33,17 @@ namespace Prueba16Nov.Algoritmos
         int rn_2 = 0;
 
 
-        List<int> listaSalida = new List<int>();
+        List<int> listaRn = new List<int>();
+        List<int> listaRn1 = new List<int>();
+        List<int> listaRn2 = new List<int>();
+        List<int> listaMRn2 = new List<int>();
+        List<int> listaVal1 = new List<int>();
+        List<int> listaVal2 = new List<int>();
 
-        listaSalida.Add(r0);
-
-        for (int i = 0; i < n-1; i++)
-
+        for (int i = 0; i < n; i++)
         {
+            listaRn.Add(r0);
+            listaRn1.Add(r1);
             // Paso 2: Calculamos r(n)*r(n+1)
             rn_2 = r0 * r1;
 
@@ -47,6 +51,7 @@ namespace Prueba16Nov.Algoritmos
             string m_rn_2 = rn_2.ToString();
             m_rn_2 = m_rn_2.Substring(1, m_rn_2.Length - 1);
             int m_rn_2_int = Int32.Parse(m_rn_2);
+            m_rn_2 = m_rn_2_int.ToString();
 
             // Paso 4: Calculamos valor1
             int m_rn_2_size = m_rn_2.Length;
@@ -73,10 +78,13 @@ namespace Prueba16Nov.Algoritmos
             r1 = valor1;
 
             // Paso 3 Guardamos el valor nuevo
-            listaSalida.Add(r0);
-        }
+            listaRn2.Add(rn_2);
+            listaMRn2.Add(m_rn_2_int);
+            listaVal1.Add(valor1);
+            listaVal2.Add(valor2);
+            }
 
-        return listaSalida;
+        return Tuple.Create(listaRn, listaRn1, listaRn2, listaMRn2, listaVal1, listaVal2);
     }
 }
 }

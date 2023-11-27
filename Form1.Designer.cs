@@ -51,11 +51,11 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(82, 436);
+            dataGridView1.Location = new Point(84, 157);
             dataGridView1.Margin = new Padding(4, 5, 4, 5);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(342, 250);
+            dataGridView1.Size = new Size(950, 327);
             dataGridView1.TabIndex = 3;
             // 
             // button2
@@ -72,7 +72,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(84, 312);
+            label5.Location = new Point(84, 46);
             label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
             label5.Size = new Size(164, 25);
@@ -81,7 +81,7 @@
             // 
             // textBox5
             // 
-            textBox5.Location = new Point(282, 306);
+            textBox5.Location = new Point(282, 40);
             textBox5.Margin = new Padding(4, 5, 4, 5);
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(142, 31);

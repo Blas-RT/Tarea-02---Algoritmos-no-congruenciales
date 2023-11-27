@@ -33,28 +33,43 @@ namespace Prueba16Nov
             AlgoritmoSimulacion algoritmo = new AlgoritmoSimulacion();
 
             // Paso 3: Llamar m�todo principal
-            List<int> listaEnteros = algoritmo.GenerarValoresPseudoaleatoriosNoCongruencial(n);
+            var(a,b,c,d,f,g) = algoritmo.GenerarValoresPseudoaleatoriosNoCongruencial(n);
 
             // Paso 4: Llenar el grid
-            llenarGrid(listaEnteros);
+            llenarGrid(a,b,c,d,f,g);
         }
-        public void llenarGrid(List<int> lista)
+        public void llenarGrid(List<int> lista1, List<int> lista2, List<int> lista3, List<int> lista4, List<int> lista5, List<int> lista6)
         {
             // Paso 0: Indicas el n�mero de columnas
             string numeroColumna1 = "1";
             string numeroColumna2 = "2";
+            string numeroColumna3 = "3";
+            string numeroColumna4 = "4";
+            string numeroColumna5 = "5";
+            string numeroColumna6 = "6";
+            string numeroColumna7 = "7";
 
             // Paso 1: Determinas la cantidad de columnas
             dataGridView1.Columns.Clear();
             dataGridView1.Columns.Add(numeroColumna1, "Id");
-            dataGridView1.Columns.Add(numeroColumna2, "Valor");
+            dataGridView1.Columns.Add(numeroColumna2, "R(n)");
+            dataGridView1.Columns.Add(numeroColumna3, "R(n+1)");
+            dataGridView1.Columns.Add(numeroColumna4, "R(n)*R(n+1)");
+            dataGridView1.Columns.Add(numeroColumna5, "M.(R(n)*R(n+1))");
+            dataGridView1.Columns.Add(numeroColumna6, "Valor 1");
+            dataGridView1.Columns.Add(numeroColumna7, "Valor 2");
 
             //Paso 2: Recorres el grid para cada fila llenas los valores aleatorios
-            for (int i = 0; i < lista.Count; i++)
+            for (int i = 0; i < lista1.Count; i++)
             {
                 dataGridView1.Rows.Add();
                 dataGridView1.Rows[i].Cells[Int32.Parse(numeroColumna1) - 1].Value = (i + 1).ToString();
-                dataGridView1.Rows[i].Cells[Int32.Parse(numeroColumna2) - 1].Value = lista[i].ToString();
+                dataGridView1.Rows[i].Cells[Int32.Parse(numeroColumna2) - 1].Value = lista1[i].ToString();
+                dataGridView1.Rows[i].Cells[Int32.Parse(numeroColumna3) - 1].Value = lista2[i].ToString();
+                dataGridView1.Rows[i].Cells[Int32.Parse(numeroColumna4) - 1].Value = lista3[i].ToString();
+                dataGridView1.Rows[i].Cells[Int32.Parse(numeroColumna5) - 1].Value = lista4[i].ToString();
+                dataGridView1.Rows[i].Cells[Int32.Parse(numeroColumna6) - 1].Value = lista5[i].ToString();
+                dataGridView1.Rows[i].Cells[Int32.Parse(numeroColumna7) - 1].Value = lista6[i].ToString();
             }
 
         }
