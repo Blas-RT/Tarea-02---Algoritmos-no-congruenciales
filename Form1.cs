@@ -12,34 +12,29 @@ namespace Prueba16Nov
         private void button1_Click(object sender, EventArgs e)
         {
             // Paso 0: Condic�on de vac�o
-            if (textBox1.Text.Equals("") ||
-                textBox2.Text.Equals("") || textBox3.Text.Equals("") ||
-                textBox4.Text.Equals(""))
+            if (textBox5.Text.Equals(""))
             {
                 MessageBox.Show("Los números tienen que ser MAYOR que cero, NO VAC�OS");
                 return;
             }
+
             // Paso 1: Inicializaci�n de par�metros
-            int x0 = Convert.ToInt32(textBox1.Text);
-            int a = Convert.ToInt32(textBox2.Text);
-            int c = Convert.ToInt32(textBox3.Text);
-            int m = Convert.ToInt32(textBox4.Text);
-            int Total = Convert.ToInt32(textBox5.Text);
+            int n = Convert.ToInt32(textBox5.Text);
 
             // Paso 1.2: Validación algoritmo
-            if (x0 < 0 ||
-                a <= 0 || c <= 0 ||
-                m <= 0)
+            if (n < 0)
             {
-                MessageBox.Show("Los números tienen que ser MAYORES QUE CERO");
+                MessageBox.Show("El número tiene que ser MAYOR QUE CERO");
                 return;
             }
 
-            
+
             // Paso 2: Declarar clase algoritmo gen�tico
             AlgoritmoSimulacion algoritmo = new AlgoritmoSimulacion();
+
             // Paso 3: Llamar m�todo principal
-            List<int> listaEnteros = algoritmo.GenerarValoresPseudoaleatoriosCongruenciales(x0, a, c, m, Total);
+            List<int> listaEnteros = algoritmo.GenerarValoresPseudoaleatoriosNoCongruencial(n);
+
             // Paso 4: Llenar el grid
             llenarGrid(listaEnteros);
         }
@@ -98,22 +93,12 @@ namespace Prueba16Nov
             DescargaExcel(dataGridView1);
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
         {
 
         }
